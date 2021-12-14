@@ -1,0 +1,4 @@
+description: Simple management of multiple kubectl versions
+downloadURLTemplate: https://github.com/flavio/{{.Name}}/releases/download/v{{.Version}}/kuberlr_{{.Version}}_{{.OS}}_{{.Arch}}.tar.gz
+homepage: https://github.com/flavio/kuberlr
+versionArgs: [version]

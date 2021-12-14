@@ -1,0 +1,4 @@
+description: The Kubernetes package manager
+downloadURLTemplate: https://get.helm.sh/{{.Name}}-v{{.Version}}-{{.OS}}-{{.Arch}}.tar.gz
+homepage: https://helm.sh/
+versionArgs: [version, --short]

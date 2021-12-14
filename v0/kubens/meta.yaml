@@ -1,0 +1,4 @@
+description: Faster way to switch between Kubernetes namespaces
+downloadURLTemplate: https://github.com/ahmetb/kubectx/releases/download/v{{.Version}}/{{.Name}}_v{{.Version}}_{{.OS}}_{{.Arch | X86_64}}.tar.gz
+homepage: https://github.com/ahmetb/kubectx
+versionArgs: [--version]
