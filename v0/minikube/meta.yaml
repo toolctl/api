@@ -1,0 +1,4 @@
+description: Run Kubernetes locally
+downloadURLTemplate: https://github.com/kubernetes/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}-{{.OS}}-{{.Arch}}.tar.gz
+homepage: https://minikube.sigs.k8s.io/
+versionArgs: [version, --short]

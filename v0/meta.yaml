@@ -1,0 +1,12 @@
+tools:
+  - age
+  - helm
+  - k9s
+  - kubectl
+  - kubectx
+  - kubefwd
+  - kubens
+  - kuberlr
+  - kustomize
+  - minikube
+  - toolctl

@@ -1,0 +1,4 @@
+description: A simple, modern and secure encryption tool
+downloadURLTemplate: https://github.com/FiloSottile/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}-v{{.Version}}-{{.OS}}-{{.Arch}}.tar.gz
+homepage: https://age-encryption.org/
+versionArgs: [--version]
