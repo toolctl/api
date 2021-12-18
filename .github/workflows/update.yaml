@@ -1,0 +1,61 @@
+name: Update
+
+on:
+  schedule:
+    - cron: '55 * * * *'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install toolctl
+        run: |
+          wget --no-verbose https://github.com/toolctl/toolctl/releases/download/v0.1.0/toolctl_0.1.0_linux_amd64.tar.gz
+          tar -xvf toolctl_0.1.0_linux_amd64.tar.gz
+          mv toolctl /usr/local/bin/toolctl
+          toolctl version
+
+      - name: Set the LocalAPIBasePath
+        run: |
+          config_dir="$HOME/.config/toolctl"
+          mkdir -p "${config_dir}"
+
+          toolctl_api_version="v0"
+          echo LocalAPIBasePath: "$GITHUB_WORKSPACE/$toolctl_api_version" > "${config_dir}/config.yaml"
+
+      - name: Check out the repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Switch to the api-discover branch, regardless if it exists or not
+        run: |
+          git checkout origin/api-discover || git checkout origin/main && git switch --create api-discover
+
+      - name: Discover updated versions for all tools
+        run: |
+          toolctl list --all | xargs toolctl api discover
+
+      - name: Check if any files have changed
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "TOOLCTL_UPDATES_FOUND=true" >> $GITHUB_ENV
+          fi
+
+      - name: Commit and push the changes
+        if: ${{ env.TOOLCTL_UPDATES_FOUND }}
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Update the toolctl API"
+          git push -u origin api-discover
+
+      - name: Create a pull request
+        if: ${{ env.TOOLCTL_UPDATES_FOUND }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr create \
+          --title "Update the toolctl API" \
+          --body "This PR updates the toolctl API with the latest discovered versions."
