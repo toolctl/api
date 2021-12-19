@@ -9,9 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install toolctl
+        env:
+         TOOLCTL_VERSION: "0.1.1"
         run: |
-          wget --no-verbose https://github.com/toolctl/toolctl/releases/download/v0.1.0/toolctl_0.1.0_linux_amd64.tar.gz
-          tar -xvf toolctl_0.1.0_linux_amd64.tar.gz
+          wget --no-verbose https://github.com/toolctl/toolctl/releases/download/v${TOOLCTL_VERSION}/toolctl_${TOOLCTL_VERSION}_linux_amd64.tar.gz
+          tar -xvf toolctl_${TOOLCTL_VERSION}_linux_amd64.tar.gz
           mv toolctl /usr/local/bin/toolctl
           toolctl version
 
