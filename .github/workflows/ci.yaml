@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  install-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the API
+        uses: actions/checkout@v2
+
+      - name: Detect all changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v12
+        with:
+          files: |
+            v0/.+
+
+      - name: Detect all updated tools
+        id: updated-tools
+        if: ${{steps.changed-files.outputs.any_changed == 'true'}}
+        run: |
+          # Check if we're running Bash 4 or higher
+          if [ -z "$BASH_VERSION" ] || [ "${BASH_VERSION:0:1}" -lt "4" ]; then
+            echo "Bash 4 or higher is required."
+            exit 1
+          fi
+
+          # Extract the names of all updated tools
+          regex="v0/([^/]+)"
+          declare -A tools
+          for path in ${{steps.changed-files.outputs.all_changed_files}}; do
+              if [[ $path =~ $regex ]]; then
+                  tools["${BASH_REMATCH[1]}"]=""
+              else
+                  echo "$path doesn't match" >&2
+              fi
+          done
+
+          # Set the GitHub Actions output
+          echo "::set-output name=any_updated::true"
+          echo "::set-output name=tools::${!tools[@]}"
+
+      - name: Install toolctl
+        if: ${{steps.updated-tools.outputs.any_updated == 'true'}}
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: |
+          gh release download --repo toolctl/toolctl --pattern 'toolctl_*_linux_amd64.tar.gz'
+          tar -xvf toolctl_*_linux_amd64.tar.gz
+          mv toolctl /usr/local/bin/toolctl
+          toolctl version
+
+      - name: Install the latest version of each tool
+        if: ${{steps.updated-tools.outputs.any_updated == 'true'}}
+        run: |
+          for tool in ${{steps.updated-tools.outputs.tools}}; do
+              toolctl install $tool
+              # TODO: Check the version of the installed tool
+          done
