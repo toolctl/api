@@ -7,6 +7,9 @@ on:
 jobs:
   detect-updated-tools:
     runs-on: ubuntu-latest
+    outputs:
+      any_updated: ${{ steps.updated-tools.outputs.any_updated }}
+      tools: ${{ steps.updated-tools.outputs.tools }}
     steps:
       - name: Check out the API
         uses: actions/checkout@v2
@@ -45,13 +48,13 @@ jobs:
 
   install-test:
     needs: [detect-updated-tools]
+    if: ${{ needs.detect-updated-tools.outputs.any_updated == 'true' }}
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Install toolctl
-        if: ${{steps.updated-tools.outputs.any_updated == 'true'}}
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
@@ -61,7 +64,6 @@ jobs:
           toolctl version
 
       - name: Set the LocalAPIBasePath
-        if: ${{steps.updated-tools.outputs.any_updated == 'true'}}
         env:
           TOOLCTL_API_VERSION: v0
         run: |
@@ -70,9 +72,8 @@ jobs:
           echo LocalAPIBasePath: "$GITHUB_WORKSPACE/$TOOLCTL_API_VERSION" > "${config_dir}/config.yaml"
 
       - name: Install the latest version of each tool
-        if: ${{steps.updated-tools.outputs.any_updated == 'true'}}
         run: |
-          for tool in ${{steps.updated-tools.outputs.tools}}; do
+          for tool in ${{ needs.detect-updated-tools.outputs.tools }}; do
               toolctl install $tool
               # TODO: Check the version of the installed tool
           done
