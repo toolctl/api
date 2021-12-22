@@ -74,6 +74,6 @@ jobs:
       - name: Install the latest version of each tool
         run: |
           for tool in ${{ needs.detect-updated-tools.outputs.tools }}; do
-              toolctl install $tool
+              toolctl install $tool --local
               # TODO: Check the version of the installed tool
           done
