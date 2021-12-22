@@ -43,15 +43,9 @@ jobs:
           echo "::set-output name=any_updated::true"
           echo "::set-output name=tools::${!tools[@]}"
 
-      - name: Install toolctl
+      - name: Install toolctl and configure the local API
+        uses: toolctl/api/.github/workflows/install-toolctl.yaml@main
         if: ${{steps.updated-tools.outputs.any_updated == 'true'}}
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        run: |
-          gh release download --repo toolctl/toolctl --pattern 'toolctl_*_linux_amd64.tar.gz'
-          tar -xvf toolctl_*_linux_amd64.tar.gz
-          mv toolctl /usr/local/bin/toolctl
-          toolctl version
 
       - name: Install the latest version of each tool
         if: ${{steps.updated-tools.outputs.any_updated == 'true'}}
