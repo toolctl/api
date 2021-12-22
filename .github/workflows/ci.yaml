@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  install-test:
+  detect-updated-tools:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the API
@@ -43,9 +43,31 @@ jobs:
           echo "::set-output name=any_updated::true"
           echo "::set-output name=tools::${!tools[@]}"
 
-      - name: Install toolctl and configure the local API
-        uses: toolctl/api/.github/workflows/install-toolctl.yaml@main
+  install-test:
+    needs: [detect-updated-tools]
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Install toolctl
         if: ${{steps.updated-tools.outputs.any_updated == 'true'}}
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: |
+          gh release download --repo toolctl/toolctl --pattern 'toolctl_*_linux_amd64.tar.gz'
+          tar -xvf toolctl_*_linux_amd64.tar.gz
+          mv toolctl /usr/local/bin/toolctl
+          toolctl version
+
+      - name: Set the LocalAPIBasePath
+        if: ${{steps.updated-tools.outputs.any_updated == 'true'}}
+        env:
+          TOOLCTL_API_VERSION: v0
+        run: |
+          config_dir="$HOME/.config/toolctl"
+          mkdir -p "${config_dir}"
+          echo LocalAPIBasePath: "$GITHUB_WORKSPACE/$TOOLCTL_API_VERSION" > "${config_dir}/config.yaml"
 
       - name: Install the latest version of each tool
         if: ${{steps.updated-tools.outputs.any_updated == 'true'}}
