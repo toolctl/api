@@ -71,6 +71,9 @@ jobs:
           mkdir -p "${config_dir}"
           echo LocalAPIBasePath: "$GITHUB_WORKSPACE/$TOOLCTL_API_VERSION" > "${config_dir}/config.yaml"
 
+      - name: Check out the API
+        uses: actions/checkout@v2
+
       - name: Install the latest version of each tool
         run: |
           for tool in ${{ needs.detect-updated-tools.outputs.tools }}; do
