@@ -58,4 +58,4 @@ jobs:
           gh pr create \
             --title "Update the toolctl API" \
             --body "This PR updates the toolctl API with the latest discovered versions."
-          gh pr merge --auto
+          gh pr merge --auto --squash
