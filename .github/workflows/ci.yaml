@@ -70,14 +70,14 @@ jobs:
         run: |
           config_dir="$HOME/.config/toolctl"
           mkdir -p "${config_dir}"
-          echo LocalAPIBasePath: "$GITHUB_WORKSPACE/$TOOLCTL_API_VERSION" > "${config_dir}/config.yaml"
+          echo LocalAPIBasePath: "${GITHUB_WORKSPACE}/${TOOLCTL_API_VERSION}" > "${config_dir}/config.yaml"
 
       - name: Check out the API
         uses: actions/checkout@v2
 
-      - name: Install the latest version of each tool
+      - name: Install and run the latest version of each tool
         run: |
           for tool in ${{ needs.detect-updated-tools.outputs.tools }}; do
-              toolctl install $tool --local
-              # TODO: Check the version of the installed tool
+              toolctl install ${tool} --local
+              ${tool} $(yq e '.versionArgs | join(" ")' v0/${tool}/meta.yaml)
           done
