@@ -12,11 +12,7 @@ jobs:
       - name: Install toolctl
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        run: |
-          gh release download --repo toolctl/toolctl --pattern 'toolctl_*_linux_amd64.tar.gz'
-          tar -xvf toolctl_*_linux_amd64.tar.gz
-          mv toolctl /usr/local/bin/toolctl
-          toolctl version
+        run: sudo /usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/toolctl/install/main/install)"
 
       - name: Set the LocalAPIBasePath
         env:

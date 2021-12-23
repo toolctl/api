@@ -55,14 +55,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Install toolctl
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        run: |
-          os=$(uname | tr '[:upper:]' '[:lower:]')
-          gh release download --repo toolctl/toolctl --pattern "toolctl_*_${os}_amd64.tar.gz"
-          tar -xvf toolctl_*_${os}_amd64.tar.gz
-          mv toolctl /usr/local/bin/toolctl
-          toolctl version
+        run: sudo /usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/toolctl/install/main/install)"
 
       - name: Set the LocalAPIBasePath
         env:
