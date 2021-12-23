@@ -1,0 +1,4 @@
+description: Portable command-line YAML processor
+downloadURLTemplate: https://github.com/mikefarah/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}_{{.OS}}_{{.Arch}}.tar.gz
+homepage: https://mikefarah.gitbook.io/yq/
+versionArgs: [--version]
