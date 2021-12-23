@@ -58,8 +58,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
-          gh release download --repo toolctl/toolctl --pattern 'toolctl_*_linux_amd64.tar.gz'
-          tar -xvf toolctl_*_linux_amd64.tar.gz
+          os=$(uname | tr '[:upper:]' '[:lower:]')
+          gh release download --repo toolctl/toolctl --pattern "toolctl_*_${os}_amd64.tar.gz"
+          tar -xvf toolctl_*_${os}_amd64.tar.gz
           mv toolctl /usr/local/bin/toolctl
           toolctl version
 
