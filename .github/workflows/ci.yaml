@@ -8,8 +8,8 @@ jobs:
   detect-updated-tools:
     runs-on: ubuntu-latest
     outputs:
-      any_updated: ${{ steps.updated-tools.outputs.any_updated }}
-      tools: ${{ steps.updated-tools.outputs.tools }}
+      any_updated: ${{steps.updated-tools.outputs.any_updated}}
+      tools: ${{steps.updated-tools.outputs.tools}}
     steps:
       - name: Check out the API
         uses: actions/checkout@v2
@@ -48,11 +48,11 @@ jobs:
 
   install-test:
     needs: [detect-updated-tools]
-    if: ${{ needs.detect-updated-tools.outputs.any_updated == 'true' }}
+    if: ${{needs.detect-updated-tools.outputs.any_updated == 'true'}}
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{matrix.os}}
     steps:
       - name: Install toolctl
         run: sudo /usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/toolctl/install/main/install)"
@@ -69,8 +69,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install and run the latest version of each tool
-        run: |
-          for tool in ${{ needs.detect-updated-tools.outputs.tools }}; do
-              toolctl install ${tool} --local
-              ${tool} $(yq e '.versionArgs | join(" ")' v0/${tool}/meta.yaml)
-          done
+        run: toolctl install ${{needs.detect-updated-tools.outputs.tools}} --local
