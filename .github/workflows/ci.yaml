@@ -10,6 +10,8 @@ jobs:
     outputs:
       any_updated: ${{steps.updated-tools.outputs.any_updated}}
       tools: ${{steps.updated-tools.outputs.tools}}
+    env:
+      TOOL_REGEX: v0/([^/]+)/
     steps:
       - name: Check out the API
         uses: actions/checkout@v2
@@ -19,7 +21,7 @@ jobs:
         uses: tj-actions/changed-files@v12
         with:
           files: |
-            v0/.+
+            ${{env.TOOL_REGEX}}
 
       - name: Detect all updated tools
         id: updated-tools
@@ -32,10 +34,9 @@ jobs:
           fi
 
           # Extract the names of all updated tools
-          regex="v0/([^/]+)"
           declare -A tools
           for path in ${{steps.changed-files.outputs.all_changed_files}}; do
-              if [[ $path =~ $regex ]]; then
+              if [[ $path =~ ${{env.TOOL_REGEX}} ]]; then
                   tools["${BASH_REMATCH[1]}"]=""
               else
                   echo "$path doesn't match" >&2
