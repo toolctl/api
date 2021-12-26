@@ -31,20 +31,25 @@ jobs:
 
       - name: Switch to the api-discover branch, regardless if it exists or not
         run: |
-          git checkout origin/api-discover || git checkout origin/main && git switch --create api-discover
+          git checkout origin/api-discover ||
+          git checkout origin/main && git switch --create api-discover
+
+      - name: Sync the list of supported tools
+        run: toolctl api sync
 
       - name: Discover updated versions for all tools
-        run: |
-          toolctl list --all | xargs toolctl api discover
+        run: toolctl list --all --local | xargs toolctl api discover
 
       - name: Check if any files have changed
+        id: changed-files
         run: |
           if [ -n "$(git status --porcelain)" ]; then
-            echo "TOOLCTL_UPDATES_FOUND=true" >> $GITHUB_ENV
+            # Set the GitHub Actions output
+            echo "::set-output name=any_changed::true"
           fi
 
       - name: Commit and push the changes
-        if: ${{env.TOOLCTL_UPDATES_FOUND}}
+        if: ${{steps.changed-files.outputs.any_changed == 'true'}}
         run: |
           git config user.name "toolctl bot"
           git config user.email "toolctl.bot@gmail.com"
@@ -59,5 +64,5 @@ jobs:
         run: |
           gh pr create \
             --title "Update the toolctl API" \
-            --body "This PR updates the toolctl API with the latest discovered versions."
+            --body "This PR updates the supported tools and discovered versions."
           gh pr merge --auto --squash
