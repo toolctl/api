@@ -58,7 +58,7 @@ jobs:
           git push -u origin api-discover
 
       - name: Create a pull request
-        if: ${{env.TOOLCTL_UPDATES_FOUND}}
+        if: ${{steps.changed-files.outputs.any_changed == 'true'}}
         env:
           GITHUB_TOKEN: ${{secrets.TOOLCTL_BOT_TOKEN}}
         run: |
