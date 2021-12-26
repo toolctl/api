@@ -1,6 +1,7 @@
 tools:
   - age
   - dive
+  - gh
   - helm
   - k9s
   - kubectl
