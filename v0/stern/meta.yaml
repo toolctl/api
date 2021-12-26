@@ -1,0 +1,4 @@
+description: Multi pod and container log tailing for Kubernetes
+downloadURLTemplate: https://github.com/{{.Name}}/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}_{{.Version}}_{{.OS}}_{{.Arch}}.tar.gz
+homepage: https://github.com/stern/stern
+versionArgs: [--version]

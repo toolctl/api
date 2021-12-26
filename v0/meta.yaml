@@ -12,5 +12,6 @@ tools:
   - kustomize
   - minikube
   - sops
+  - stern
   - toolctl
   - yq
