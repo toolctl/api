@@ -38,7 +38,7 @@ jobs:
         run: toolctl api sync
 
       - name: Discover updated versions for all tools
-        run: toolctl list --all --local | xargs toolctl api discover
+        run: toolctl api discover
 
       - name: Check if any files have changed
         id: changed-files
