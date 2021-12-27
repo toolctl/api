@@ -2,6 +2,7 @@ tools:
   - age
   - dive
   - gh
+  - golangci-lint
   - helm
   - k9s
   - kubectl
@@ -13,5 +14,6 @@ tools:
   - minikube
   - sops
   - stern
+  - tkn
   - toolctl
   - yq
