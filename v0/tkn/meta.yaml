@@ -1,0 +1,4 @@
+description: A CLI for interacting with Tekton
+downloadURLTemplate: https://github.com/tektoncd/cli/releases/download/v{{.Version}}/{{.Name}}_{{.Version}}_{{.OS | Title}}_{{.Arch | X86_64}}.tar.gz
+homepage: https://age_encryption.org/
+versionArgs: [version, --component=client]
