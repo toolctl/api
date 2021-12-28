@@ -15,6 +15,7 @@ tools:
   - minikube
   - sops
   - stern
+  - terraform
   - tkn
   - toolctl
   - yq
