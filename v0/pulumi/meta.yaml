@@ -1,4 +1,4 @@
 description: Developer-first infrastructure as code
-downloadURLTemplate: https://github.com/{{.Name}}/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}-v{{.Version}}-{{.OS}}-{{.Arch | X64}}.tar.gz
+downloadURLTemplate: https://github.com/{{.Name}}/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}-v{{.Version}}-{{.OS}}-{{.Arch | AMD64X64}}.tar.gz
 homepage: https://www.pulumi.com/
 versionArgs: [version]

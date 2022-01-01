@@ -1,4 +1,4 @@
 description: Faster way to switch between Kubernetes contexts
-downloadURLTemplate: https://github.com/ahmetb/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}_v{{.Version}}_{{.OS}}_{{.Arch | X86_64}}.tar.gz
+downloadURLTemplate: https://github.com/ahmetb/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}_v{{.Version}}_{{.OS}}_{{.Arch | AMD64X86_64}}.tar.gz
 homepage: https://github.com/ahmetb/kubectx
 versionArgs: [--version]
