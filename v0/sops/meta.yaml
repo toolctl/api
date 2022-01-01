@@ -1,4 +1,4 @@
 description: Simple and flexible tool for managing secrets
-downloadURLTemplate: https://github.com/mozilla/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}-v{{.Version}}.{{.OS}}{{.Arch | DefaultAMD64}}
+downloadURLTemplate: https://github.com/mozilla/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}-v{{.Version}}.{{.OS}}{{.Arch | AMD64Default}}
 homepage: https://github.com/mozilla/sops
 versionArgs: [--version]

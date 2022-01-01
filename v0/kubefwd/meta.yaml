@@ -1,4 +1,4 @@
 description: Bulk port forwarding Kubernetes services for local development
-downloadURLTemplate: https://github.com/txn2/{{.Name}}/releases/download/{{.Version}}/{{.Name}}_{{.OS | Title}}_{{.Arch | X86_64}}.tar.gz
+downloadURLTemplate: https://github.com/txn2/{{.Name}}/releases/download/{{.Version}}/{{.Name}}_{{.OS | Title}}_{{.Arch | AMD64X86_64}}.tar.gz
 homepage: https://github.com/txn2/kubefwd
 versionArgs: [version, quiet]

@@ -5,6 +5,7 @@ tools:
   - gh
   - golangci-lint
   - helm
+  - hugo
   - k9s
   - kubectl
   - kubectx

@@ -1,4 +1,4 @@
 description: GitHub's official command line tool
-downloadURLTemplate: https://github.com/cli/cli/releases/download/v{{.Version}}/{{.Name}}_{{.Version}}_{{.OS | MacOS}}_{{.Arch}}.tar.gz
+downloadURLTemplate: https://github.com/cli/cli/releases/download/v{{.Version}}/{{.Name}}_{{.Version}}_{{.OS | DarwinMacOS}}_{{.Arch}}.tar.gz
 homepage: https://cli.github.com/
 versionArgs: [version]
