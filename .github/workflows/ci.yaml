@@ -11,6 +11,7 @@ jobs:
       any_updated: ${{steps.updated-tools.outputs.any_updated}}
       tools: ${{steps.updated-tools.outputs.tools}}
     env:
+      TOOL_GLOB: v0/*/**
       TOOL_REGEX: v0/([^/]+)/
     steps:
       - name: Check out the API
@@ -21,7 +22,7 @@ jobs:
         uses: tj-actions/changed-files@v13
         with:
           files: |
-            ${{env.TOOL_REGEX}}
+            ${{env.TOOL_GLOB}}
 
       - name: Detect all updated tools
         id: updated-tools
