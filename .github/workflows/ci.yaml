@@ -57,7 +57,7 @@ jobs:
     runs-on: ${{matrix.os}}
     steps:
       - name: Install toolctl
-        run: sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/toolctl/install/main/install)"
+        run: curl -fsSL https://toolctl.io/install | sh
 
       - name: Set the LocalAPIBasePath
         env:
