@@ -56,6 +56,9 @@ jobs:
         os: [ubuntu-latest, macos-latest]
     runs-on: ${{matrix.os}}
     steps:
+      - name: Add ~/.local/bin to the PATH
+        run: echo "$HOME/.local/bin" >> $GITHUB_PATH
+
       - name: Install toolctl
         run: curl -fsSL https://toolctl.io/install | sh
 
@@ -67,7 +70,7 @@ jobs:
           mkdir -p "${config_dir}"
           echo LocalAPIBasePath: "${GITHUB_WORKSPACE}/${TOOLCTL_API_VERSION}" > "${config_dir}/config.yaml"
 
-      - name: Check out the API
+      - name: Check out the repo
         uses: actions/checkout@v2
 
       - name: Install and run the latest version of each tool

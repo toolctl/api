@@ -10,9 +10,10 @@ jobs:
     if: github.repository_owner == 'toolctl'
     runs-on: ubuntu-latest
     steps:
+      - name: Add ~/.local/bin to the PATH
+        run: echo "$HOME/.local/bin" >> $GITHUB_PATH
+
       - name: Install toolctl
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: curl -fsSL https://toolctl.io/install | sh
 
       - name: Set the LocalAPIBasePath
@@ -21,7 +22,7 @@ jobs:
         run: |
           config_dir="$HOME/.config/toolctl"
           mkdir -p "${config_dir}"
-          echo LocalAPIBasePath: "$GITHUB_WORKSPACE/$TOOLCTL_API_VERSION" > "${config_dir}/config.yaml"
+          echo LocalAPIBasePath: "${GITHUB_WORKSPACE}/${TOOLCTL_API_VERSION}" > "${config_dir}/config.yaml"
 
       - name: Check out the repo
         uses: actions/checkout@v2
