@@ -7,6 +7,7 @@ tools:
   - helm
   - hugo
   - k9s
+  - kind
   - kubectl
   - kubectx
   - kubefwd
