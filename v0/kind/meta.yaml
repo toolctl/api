@@ -1,0 +1,4 @@
+description: Kubernetes IN Docker - local clusters for testing Kubernetes
+downloadURLTemplate: https://github.com/kubernetes-sigs/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}-{{.OS}}-{{.Arch}}
+homepage: https://kind.sigs.k8s.io/
+versionArgs: [--version]
