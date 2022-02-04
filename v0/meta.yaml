@@ -2,6 +2,7 @@ tools:
   - age
   - chezmoi
   - dive
+  - eksctl
   - gh
   - golangci-lint
   - helm
