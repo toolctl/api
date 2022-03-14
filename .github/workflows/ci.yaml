@@ -15,7 +15,7 @@ jobs:
       TOOL_REGEX: v0/([^/]+)/
     steps:
       - name: Check out the API
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Detect all changed files
         id: changed-files
@@ -71,7 +71,7 @@ jobs:
           echo LocalAPIBasePath: "${GITHUB_WORKSPACE}/${TOOLCTL_API_VERSION}" > "${config_dir}/config.yaml"
 
       - name: Check out the repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Install and run the latest version of each tool
         run: toolctl install ${{needs.detect-updated-tools.outputs.tools}} --local
