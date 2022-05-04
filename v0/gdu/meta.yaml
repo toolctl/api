@@ -1,0 +1,5 @@
+description: Fast disk usage analyzer with console interface written in Go
+downloadURLTemplate: https://github.com/dundee/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}_{{.OS}}_{{.Arch}}.tgz
+homepage: https://github.com/dundee/gdu
+ignoreVersions: ['4.3.3', '4.6.4']
+versionArgs: [--version]
