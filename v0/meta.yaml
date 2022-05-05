@@ -10,6 +10,7 @@ tools:
   - hugo
   - k9s
   - kind
+  - kops
   - kubectl
   - kubectx
   - kubefwd
