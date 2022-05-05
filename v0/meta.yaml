@@ -3,6 +3,7 @@ tools:
   - chezmoi
   - dive
   - eksctl
+  - gdu
   - gh
   - golangci-lint
   - helm
