@@ -1,0 +1,6 @@
+description: Easy and repeatable Kubernetes development
+downloadURLTemplate: https://storage.googleapis.com/{{.Name}}/releases/v{{.Version}}/{{.Name}}-{{.OS}}-{{.Arch}}
+homepage: https://skaffold.dev/
+ignoredVersions:
+  - '1.10.0' # exec format error on darwin amd64
+versionArgs: [version]
