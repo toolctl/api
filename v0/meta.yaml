@@ -3,6 +3,7 @@ tools:
   - age-keygen
   - chezmoi
   - dive
+  - dockerfilegraph
   - eksctl
   - gdu
   - gh
