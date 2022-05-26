@@ -3,4 +3,5 @@ downloadURLTemplate: https://github.com/mikefarah/{{.Name}}/releases/download/v{
 homepage: https://mikefarah.gitbook.io/yq/
 ignoredVersions:
   - '4.17.1' # withdrawn
+  - '4.24.1' # withdrawn
 versionArgs: [--version]
