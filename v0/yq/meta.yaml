@@ -4,4 +4,5 @@ homepage: https://mikefarah.gitbook.io/yq/
 ignoredVersions:
   - '4.17.1' # withdrawn
   - '4.24.1' # withdrawn
+  - '4.24.3' # wrong version information
 versionArgs: [--version]
