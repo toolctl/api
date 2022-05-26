@@ -1,4 +1,4 @@
 description: The official CLI for Amazon EKS
-downloadURLTemplate: https://github.com/weaveworks/{{.Name}}/releases/download/{{.Version}}/{{.Name}}_{{.OS | Title}}_{{.Arch}}.tar.gz
+downloadURLTemplate: https://github.com/weaveworks/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}_{{.OS | Title}}_{{.Arch}}.tar.gz
 homepage: https://eksctl.io/
 versionArgs: [version]

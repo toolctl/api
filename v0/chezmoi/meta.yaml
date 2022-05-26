@@ -1,4 +1,7 @@
 description: Manage your dotfiles across multiple diverse machines, securely
 downloadURLTemplate: https://github.com/twpayne/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}_{{.Version}}_{{.OS}}_{{.Arch}}.tar.gz
 homepage: https://chezmoi.io/
+ignoredVersions:
+  - '1.7.17' # wrong version information
+  - '2.0.1' # wrong version information
 versionArgs: [--version]
