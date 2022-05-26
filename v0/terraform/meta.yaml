@@ -1,4 +1,7 @@
 description: Infrastructure as code software tool
 downloadURLTemplate: https://releases.hashicorp.com/{{.Name}}/{{.Version}}/{{.Name}}_{{.Version}}_{{.OS}}_{{.Arch}}.zip
 homepage: https://www.terraform.io/
+ignoredVersions:
+  - '0.12.22' # wrong version information
+  - '0.13.0' # wrong version information
 versionArgs: [version]
