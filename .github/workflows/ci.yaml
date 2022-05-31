@@ -19,7 +19,7 @@ jobs:
 
       - name: Detect all changed files
         id: changed-files
-        uses: tj-actions/changed-files@0edfedf16d9ff0903cbe599d474a022823ca8fb8 # tag=v21
+        uses: tj-actions/changed-files@3de1f9a283b61f308ee3045be4d301037657225a # tag=v22
         with:
           files: |
             ${{env.TOOL_GLOB}}
