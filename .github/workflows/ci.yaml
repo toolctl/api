@@ -76,5 +76,10 @@ jobs:
       - name: Install the latest version of each tool
         run: toolctl install ${{needs.detect-updated-tools.outputs.tools}} --local
 
-      - name: Test the discover mechanism for each tool
-        run: toolctl api discover ${{needs.detect-updated-tools.outputs.tools}}
+      - name: Test the discover mechanism for each tool on Linux
+        if: runner.os == 'Linux'
+        run: toolctl api discover ${{needs.detect-updated-tools.outputs.tools}} --os linux
+
+      - name: Test the discover mechanism for each tool on macOS
+        if: runner.os == 'macOS'
+        run: toolctl api discover ${{needs.detect-updated-tools.outputs.tools}} --os darwin
