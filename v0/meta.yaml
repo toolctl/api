@@ -8,6 +8,7 @@ tools:
   - gdu
   - gh
   - golangci-lint
+  - gping
   - helm
   - hugo
   - k9s
