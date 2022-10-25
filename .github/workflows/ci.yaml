@@ -55,7 +55,7 @@ jobs:
     if: ${{needs.detect-updated-tools.outputs.any_updated == 'true'}}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [ubuntu-latest, macos-12]
     runs-on: ${{matrix.os}}
     steps:
       - name: Add ~/.local/bin to the PATH
