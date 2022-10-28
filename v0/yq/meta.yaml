@@ -6,4 +6,5 @@ ignoredVersions:
   - '4.24.1' # withdrawn
   - '4.24.3' # wrong version information
   - '4.24.4' # wrong version information
+  - '4.27.1' # withdrawn
 versionArgs: [--version]
