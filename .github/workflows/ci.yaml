@@ -47,8 +47,8 @@ jobs:
           done
 
           # Set the GitHub Actions output
-          echo "::set-output name=any_updated::true"
-          echo "::set-output name=tools::${!tools[@]}"
+          echo "any_updated=true" >> $GITHUB_OUTPUT
+          echo "tools=${!tools[@]}" >> $GITHUB_OUTPUT
 
   install-test:
     needs: [detect-updated-tools]
