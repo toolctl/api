@@ -46,7 +46,7 @@ jobs:
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             # Set the GitHub Actions output
-            echo "::set-output name=any_changed::true"
+            echo "any_changed=true" >> $GITHUB_OUTPUT
           fi
 
       - name: Commit and push the changes
