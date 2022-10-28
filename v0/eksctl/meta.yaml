@@ -1,4 +1,6 @@
 description: The official CLI for Amazon EKS
 downloadURLTemplate: https://github.com/weaveworks/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}_{{.OS | Title}}_{{.Arch}}.tar.gz
 homepage: https://eksctl.io/
+ignoredVersions:
+  - '0.81.0' # withdrawn
 versionArgs: [version]
