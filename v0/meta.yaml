@@ -2,6 +2,7 @@ tools:
   - age
   - age-keygen
   - chezmoi
+  - cloudflared
   - dive
   - dockerfilegraph
   - eksctl
