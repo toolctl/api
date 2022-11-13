@@ -2,19 +2,19 @@ description: Cloudflare Tunnel client
 downloadURLTemplate: https://github.com/cloudflare/{{.Name}}/releases/download/{{.Version}}/{{.Name}}-{{.OS}}-{{.Arch}}{{"" | DarwinExtensionTGZ}}
 homepage: https://github.com/cloudflare/cloudflared
 ignoredVersions:
-  - 2020.11.0 # withdrawn
-  - 2020.11.1 # withdrawn
-  - 2020.11.2 # withdrawn
-  - 2021.0.0 # never released
-  - 2021.2.0 # wrong version information
-  - 2021.2.1 # wrong version information
-  - 2021.5.0 # withdrawn
-  - 2021.5.1 # withdrawn
-  - 2021.5.2 # withdrawn
-  - 2021.5.3 # withdrawn
-  - 2021.5.4 # empty darwin tarball
-  - 2021.5.5 # empty darwin tarball
-  - 2021.6.0 # no darwin tarball
-  - 2022.0.0 # never released
-  - 2023.0.0 # never released
+  - '2020.11.0' # withdrawn
+  - '2020.11.1' # withdrawn
+  - '2020.11.2' # withdrawn
+  - '2021.0.0' # never released
+  - '2021.2.0' # wrong version information
+  - '2021.2.1' # wrong version information
+  - '2021.5.0' # withdrawn
+  - '2021.5.1' # withdrawn
+  - '2021.5.2' # withdrawn
+  - '2021.5.3' # withdrawn
+  - '2021.5.4' # empty darwin tarball
+  - '2021.5.5' # empty darwin tarball
+  - '2021.6.0' # no darwin tarball
+  - '2022.0.0' # never released
+  - '2023.0.0' # never released
 versionArgs: [version]
