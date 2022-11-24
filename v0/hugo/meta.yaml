@@ -1,4 +1,4 @@
 description: The world's fastest framework for building websites
-downloadURLTemplate: https://github.com/gohugoio/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}_{{.Version}}_{{.OS | DarwinMacOS}}-{{.Arch | DarwinArchUniversal}}.tar.gz
+downloadURLTemplate: https://github.com/gohugoio/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}_{{.Version}}_{{.OS}}-{{.Arch | DarwinArchUniversal}}.tar.gz
 homepage: https://gohugo.io/
 versionArgs: [version]
