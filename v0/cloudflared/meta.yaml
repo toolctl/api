@@ -16,5 +16,7 @@ ignoredVersions:
   - '2021.5.5' # empty darwin tarball
   - '2021.6.0' # no darwin tarball
   - '2022.0.0' # never released
+  - '2022.11.0' # empty darwin tarball
+  - '2022.11.1' # empty darwin tarball
   - '2023.0.0' # never released
 versionArgs: [version]
