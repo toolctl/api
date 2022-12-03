@@ -1,0 +1,14 @@
+description: Live reload for Go apps
+downloadURLTemplate: https://github.com/cosmtrek/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}_{{.Version}}_{{.OS}}_{{.Arch}}.tar.gz
+homepage: https://github.com/cosmtrek/air
+ignoredVersions:
+  - 1.31.0 # never released
+  - 1.32.0 # never released
+  - 1.33.0 # never released
+  - 1.34.0 # never released
+  - 1.35.0 # never released
+  - 1.36.0 # never released
+  - 1.37.0 # never released
+  - 1.38.0 # never released
+  - 1.39.0 # never released
+versionArgs: [-v]
