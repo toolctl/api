@@ -3,4 +3,5 @@ downloadURLTemplate: https://storage.googleapis.com/{{.Name}}/releases/v{{.Versi
 homepage: https://skaffold.dev/
 ignoredVersions:
   - '1.10.0' # exec format error on darwin amd64
+  - '2.1.0' # verson command reports nothing
 versionArgs: [version]
