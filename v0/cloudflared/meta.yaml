@@ -1,5 +1,5 @@
 description: Cloudflare Tunnel client
-downloadURLTemplate: https://github.com/cloudflare/{{.Name}}/releases/download/{{.Version}}/{{.Name}}-{{.OS}}-{{.Arch}}{{"" | DarwinExtensionTGZ}}
+downloadURLTemplate: https://github.com/cloudflare/{{.Name}}/releases/download/{{.Version}}/{{.Name}}-{{.OS}}-{{.Arch}}{{"" | DarwinExtensionTgz}}
 homepage: https://github.com/cloudflare/cloudflared
 ignoredVersions:
   - '2020.11.0' # withdrawn
