@@ -1,4 +1,6 @@
 description: Fast linters runner for Go
 downloadURLTemplate: https://github.com/golangci/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}-{{.Version}}-{{.OS}}-{{.Arch}}.tar.gz
 homepage: https://golangci-lint.run/
+ignoredVersions:
+  - '1.53.0' # broken
 versionArgs: [--version]
