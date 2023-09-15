@@ -24,7 +24,7 @@ jobs:
         run: echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: Install toolctl
-        run: curl -fsSL https://toolctl.io/install | sh
+        run: curl -fsSL https://raw.githubusercontent.com/toolctl/install/main/install | sh
 
       - name: Set the LocalAPIBasePath
         env:
