@@ -9,6 +9,7 @@ tools:
   - eksctl
   - gdu
   - gh
+  - godolint
   - golangci-lint
   - gping
   - helm
