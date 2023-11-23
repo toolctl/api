@@ -1,0 +1,4 @@
+description: Dockerfile linter, written in Golang 🐳
+downloadURLTemplate: https://github.com/zabio3/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}_{{.Version}}_{{.OS}}_{{.Arch}}.tar.gz
+homepage: https://github.com/zabio3/godolint
+versionArgs: [--version]
