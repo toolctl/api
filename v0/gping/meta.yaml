@@ -1,4 +1,7 @@
 description: Ping, but with a graph
 downloadURLTemplate: https://github.com/orf/{{.Name}}/releases/download/{{.Name}}-v{{.Version}}/{{.Name}}-{{.OS | Title }}-{{.Arch | AMD64X86_64}}.tar.gz
 homepage: https://github.com/orf/gping
+ignoredVersions:
+  - '1.9.0'
+  - '1.10.0'
 versionArgs: [--version]
