@@ -1,4 +1,7 @@
 description: Production grade K8s installation, upgrades, and management
 downloadURLTemplate: https://github.com/kubernetes/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}-{{.OS}}-{{.Arch}}
 homepage: https://kops.sigs.k8s.io/
+ignoredVersions:
+  - '1.26.0'
+  - '1.26.1'
 versionArgs: [version]
