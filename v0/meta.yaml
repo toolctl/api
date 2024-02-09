@@ -28,6 +28,7 @@ tools:
   - skaffold
   - sops
   - stern
+  - task
   - terraform
   - tkn
   - toolctl
