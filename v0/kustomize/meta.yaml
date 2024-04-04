@@ -2,3 +2,5 @@ description: Template-free customization of Kubernetes configuration
 downloadURLTemplate: https://github.com/kubernetes-sigs/{{.Name}}/releases/download/{{.Name}}%2Fv{{.Version}}/{{.Name}}_v{{.Version}}_{{.OS}}_{{.Arch}}.tar.gz
 homepage: https://kustomize.io/
 versionArgs: [version, --short]
+ignoredVersions:
+  - '5.4.0' # missing version number
