@@ -16,6 +16,7 @@ tools:
   - hugo
   - k9s
   - kind
+  - kompose
   - kops
   - kubectl
   - kubectx

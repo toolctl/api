@@ -1,0 +1,4 @@
+description: Convert Compose to Kubernetes
+downloadURLTemplate: https://github.com/kubernetes/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}-{{.OS}}-{{.Arch}}
+homepage: https://kompose.io/
+versionArgs: [version]
