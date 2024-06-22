@@ -1,0 +1,6 @@
+description: Deliver Go binaries as fast and easily as possible
+downloadURLTemplate: https://github.com/{{.Name}}/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}_{{.OS | Title}}_{{.Arch | AMD64X86_64}}.tar.gz
+homepage: https://goreleaser.com/
+ignoredVersions:
+  - 1.18.0 # broken
+versionArgs: [--version]
