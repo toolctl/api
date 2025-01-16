@@ -11,4 +11,11 @@ ignoredVersions:
   - 1.37.0 # never released
   - 1.38.0 # never released
   - 1.39.0 # never released
+  - 1.53.0 # never released
+  - 1.54.0 # never released
+  - 1.55.0 # never released
+  - 1.56.0 # never released
+  - 1.57.0 # never released
+  - 1.58.0 # never released
+  - 1.59.0 # never released
 versionArgs: [-v]
