@@ -19,6 +19,11 @@ ignoredVersions:
   - '2022.11.0' # empty darwin tarball
   - '2023.0.0' # never released
   - '2023.4.2' # wrong version information
-  - '2023.9.0'
+  - '2023.9.0' # never released
   - '2024.0.0' # never released
+  - '2024.7.0' # never released
+  - '2024.8.0' # never released
+  - '2024.8.1' # never released
+  - '2024.9.0' # wrong version information
+  - '2025.0.0' # never released
 versionArgs: [version]
