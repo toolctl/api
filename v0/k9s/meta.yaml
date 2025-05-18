@@ -1,4 +1,12 @@
 description: Kubernetes CLI to manage your clusters in style
 downloadURLTemplate: https://github.com/derailed/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}_{{.OS | Title}}_{{.Arch}}.tar.gz
 homepage: https://k9scli.io/
+ignoredVersions:
+  - '0.33.0' # never released
+  - '0.34.0' # never released
+  - '0.35.0' # never released
+  - '0.36.0' # never released
+  - '0.37.0' # never released
+  - '0.38.0' # never released
+  - '0.39.0' # never released
 versionArgs: [version, --short]
