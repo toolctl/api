@@ -9,4 +9,13 @@ ignoredVersions:
   - '0.37.0' # never released
   - '0.38.0' # never released
   - '0.39.0' # never released
+  - '0.41.0' # never released
+  - '0.42.0' # never released
+  - '0.43.0' # never released
+  - '0.44.0' # never released
+  - '0.45.0' # never released
+  - '0.46.0' # never released
+  - '0.47.0' # never released
+  - '0.48.0' # never released
+  - '0.49.0' # never released
 versionArgs: [version, --short]
