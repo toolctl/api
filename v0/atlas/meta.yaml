@@ -1,0 +1,4 @@
+description: Manage your database schema as code
+downloadURLTemplate: https://release.ariga.io/atlas/atlas-{{.OS}}-{{.Arch}}-v{{.Version}}
+homepage: https://atlasgo.io
+versionArgs: [version]

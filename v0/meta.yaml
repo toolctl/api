@@ -2,6 +2,7 @@ tools:
   - age
   - age-keygen
   - air
+  - atlas
   - chezmoi
   - cloudflared
   - dive
