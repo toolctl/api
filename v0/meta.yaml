@@ -14,6 +14,7 @@ tools:
   - golangci-lint
   - goreleaser
   - gping
+  - grype
   - helm
   - hugo
   - k9s
