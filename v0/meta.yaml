@@ -32,6 +32,7 @@ tools:
   - skaffold
   - sops
   - stern
+  - syft
   - task
   - terraform
   - tkn
