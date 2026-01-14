@@ -1,0 +1,8 @@
+description: CLI tool and library for generating a Software Bill of Materials from container images and filesystems
+downloadURLTemplate: https://github.com/anchore/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}_{{.Version}}_{{.OS}}_{{.Arch}}.tar.gz
+homepage: https://github.com/anchore/syft
+versionArgs: [version]
+ignoredVersions:
+  - 1.12.0 # withdrawn
+  - 1.12.1 # withdrawn
+  - 1.35.0 # withdrawn
