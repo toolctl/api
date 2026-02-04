@@ -1,0 +1,10 @@
+description: dev tools, env vars, task runner
+downloadURLTemplate: https://github.com/jdx/mise/releases/download/v{{.Version}}/mise-v{{.Version}}-{{.OS | DarwinMacOS}}-{{.Arch | AMD64X64}}{{".tar.gz"}}
+homepage: https://mise.jdx.dev/
+versionArgs: [--version]
+ignoredVersions:
+  - 2024.0.0 # never released
+  - 2024.8.9 # broken
+  - 2024.8.10 # broken
+  - 2025.0.0 # never released
+  - 2026.0.0 # never released

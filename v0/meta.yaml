@@ -28,6 +28,7 @@ tools:
   - kuberlr
   - kustomize
   - minikube
+  - mise
   - pulumi
   - skaffold
   - sops
