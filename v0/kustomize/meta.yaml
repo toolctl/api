@@ -3,4 +3,6 @@ downloadURLTemplate: https://github.com/kubernetes-sigs/{{.Name}}/releases/downl
 homepage: https://kustomize.io/
 versionArgs: [version, --short]
 ignoredVersions:
-  - '5.4.0' # missing version number
+  - 5.1.0 # no build for darwin/arm64
+  - 5.2.0 # wrong binary asset format
+  - 5.4.0 # missing version number
