@@ -2,15 +2,17 @@ description: Portable command-line YAML processor
 downloadURLTemplate: https://github.com/mikefarah/{{.Name}}/releases/download/v{{.Version}}/{{.Name}}_{{.OS}}_{{.Arch}}.tar.gz
 homepage: https://mikefarah.gitbook.io/yq/
 ignoredVersions:
-  - '4.17.1' # withdrawn
-  - '4.24.1' # withdrawn
-  - '4.24.3' # wrong version information
-  - '4.24.4' # wrong version information
-  - '4.27.1' # withdrawn
-  - '4.30.2' # wrong version information
-  - '4.36.0'
-  - '4.37.0'
-  - '4.38.0'
-  - '4.39.0'
-  - '4.40.0'
+  - 4.17.1 
+  - 4.24.1 
+  - 4.24.3 # wrong version information
+  - 4.24.4 # wrong version information
+  - 4.27.1 
+  - 4.30.2 # wrong version information
+  - 4.36.0
+  - 4.37.0
+  - 4.38.0
+  - 4.39.0
+  - 4.40.0
+  - 4.50.0
+  - 4.51.0
 versionArgs: [--version]
